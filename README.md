@@ -24,4 +24,4 @@ For example: ["9:00", "9:15", "9:30", ...]
 
 Consider that the shelter is open for visits from 8:00 to 18:00.
 
-## Solution in new.py
+## Solution in new.py file
