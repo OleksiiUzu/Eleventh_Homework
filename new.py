@@ -14,7 +14,6 @@ def time_check():
 
 
 def time_to_visit(some_list: list, time_visit: int):
-    # тут видаляє весь час яки заброньований з основного листа
     t = time_check()
     for i in some_list:
         start = f'{i[0][0].hour}:{i[0][0].minute}'
@@ -28,10 +27,6 @@ def time_to_visit(some_list: list, time_visit: int):
     pattern = r'(([0-9]|[0-2][0-3]|1[0-9]|0[0-9]):([0-5][0-9]|[0-9]))'
     new_lst = []
     for i in t:
-        # тут магія
-        # я використав регулярку щоб просто достукатися до години в нашому часі(8:0 - 8)
-        # потім я додаю у, яка відповідає за час відвідування и створюю таке (у=1, до 8:0, після 9:0 )
-        # якщо такий час є то додає 8:0 до листу який ми повернемо в кінці
         correct_time = re.findall(pattern, str(i))
         current = correct_time[0][1]
         next_hour = int(correct_time[0][1]) + time_visit
